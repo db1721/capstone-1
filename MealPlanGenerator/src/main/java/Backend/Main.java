@@ -13,7 +13,7 @@ package Backend;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
-import GUI.HomeScreenJFrame;
+import GUI.HomeScreenGUI;
 
 import java.awt.EventQueue;
 
@@ -23,7 +23,10 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					// for testing, set to true
 					new Main(true);
+					//for good luck ;)
+//					System.out.println("Hello World");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -32,19 +35,17 @@ public class Main {
 	}
 
 	// Prompts the user to either select an existing database or create a new one
-	public Main(Boolean testing) {	
-		if(testing == false) {
+	public Main(Boolean testing) {
+		if (testing == false) {
 			UIManager.put("Button.defaultButtonFollowsFocus", true);
-		    if (JOptionPane.showConfirmDialog(null, "Would you like to use an existing database?", 
-		            "Import Database?", JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION) {
-		    	new HomeScreenJFrame(JOptionPane.showInputDialog("Enter database name"));
-		    } 
-		    else {
-		    	new HomeScreenJFrame();
-		    }
+			if (JOptionPane.showConfirmDialog(null, "Would you like to use an existing database?", "Import Database?",
+					JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION) {
+				new HomeScreenGUI(JOptionPane.showInputDialog("Enter database name"));
+			} else {
+				new HomeScreenGUI();
+			}
+		} else {
+			new HomeScreenGUI("test", false);
 		}
-		else {
-			new HomeScreenJFrame("test", false);
-		}
-	  }
+	}
 }
