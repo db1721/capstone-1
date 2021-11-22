@@ -1,19 +1,13 @@
 ----------------------------------------------------------------
-Sat Nov 06 17:36:49 CDT 2021:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-017c-f765-b25c-000006e7a378 
-on database directory C:\Users\jamnn\Documents\NetBeansProjects\MealPlanGenerator\test with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4e0e2f2a 
-Loaded from file:/C:/Apache/db-derby-10.15.2.0-bin/lib/derby.jar
+Mon Nov 22 10:33:07 EST 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.3.0 - (1405108): instance a816c00e-017d-4847-8900-000000b37188 
+on database directory C:\Users\danbe\OneDrive\Desktop\GitHub\Capstone-Colab\MealPlanGenerator\test  with class loader sun.misc.Launcher$AppClassLoader@1d16e93 
+Loaded from file:/C:/Users/danbe/.m2/repository/org/apache/derby/derby/10.8.3.0/derby-10.8.3.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=13.0.2+8
-user.dir=C:\Users\jamnn\Documents\NetBeansProjects\MealPlanGenerator
+java.runtime.version=1.8.0_301-b09
+user.dir=C:\Users\danbe\OneDrive\Desktop\GitHub\Capstone-Colab\MealPlanGenerator
 os.name=Windows 10
-os.arch=amd64
+os.arch=x86
 os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Nov 06 17:39:04 CDT 2021: Shutting down Derby engine
-----------------------------------------------------------------
-Sat Nov 06 17:39:04 CDT 2021:
-Shutting down instance a816c00e-017c-f765-b25c-000006e7a378 on database directory C:\Users\jamnn\Documents\NetBeansProjects\MealPlanGenerator\test with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4e0e2f2a 
-----------------------------------------------------------------
