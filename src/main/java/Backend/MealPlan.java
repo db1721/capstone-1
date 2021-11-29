@@ -38,10 +38,12 @@ public class MealPlan {
 	public void generatePlan() {
 		if (mealsIncluded[0] || mealsIncluded[1] || mealsIncluded[2]) {
 			mealDatabase.buildMealArrays();
-			for (int counter = 0; counter < daysOfMeals; counter++) {
-				if ((counter + 1) % duplicatePeriod == 0)
+      for(int counter = 0; counter < daysOfMeals; counter++) {
+        if(duplicatePeriod > 0) {
+          if((counter + 1) % duplicatePeriod == 0 && duplicatePeriod > 0)
 					mealDatabase.rebuildMealArrays();
-				if (mealsIncluded[0]) {
+        }
+        if(mealsIncluded[0]) {
 					int randomNumber = ThreadLocalRandom.current().nextInt(0, mealDatabase.breakfastMeals.size());
 					selectedMeals.add(mealDatabase.getRandomMeal(1, randomNumber));
 				}

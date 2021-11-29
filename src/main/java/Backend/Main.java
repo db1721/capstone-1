@@ -20,18 +20,18 @@ import java.awt.EventQueue;
 public class Main {
 	// Main method
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					// for testing, set to true
-					new Main(true);
-					//for good luck ;)
-//					System.out.println("Hello World");
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+      EventQueue.invokeLater(new Runnable() {
+        public void run() {
+          try {
+            // for testing, set to true -- bypasses database selection prompt
+            new Main(true);
+            //for good luck ;)
+            //System.out.println("Hello World");
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
+        }
+      });
 	}
 
 	// Prompts the user to either select an existing database or create a new one
@@ -45,7 +45,7 @@ public class Main {
 				new HomeScreenGUI();
 			}
 		} else {
-			new HomeScreenGUI("test", false);
+			new HomeScreenGUI("test-database", false);
 		}
 	}
 }

@@ -20,7 +20,6 @@ import javax.swing.Timer;
 
 import Backend.EditMealOptions;
 import Backend.EnterMealScreen;
-import Backend.GeneratePlanScreen;
 import Backend.Main;
 import Database.MealDatabase;
 import Utilities.RandomNumber;
@@ -31,6 +30,8 @@ public class HomeScreenGUI extends JFrame {
 	 ****************************************************************/
 	private static final long serialVersionUID = 1L;
 	MealDatabase mealDatabase;
+//	JPanel leftPanelMain;
+//	JPanel rightPanelMain;
 
 	// Constructor that selects an existing database
 	public HomeScreenGUI() {
@@ -83,6 +84,7 @@ public class HomeScreenGUI extends JFrame {
 		leftPanelMain.setBounds(0, 0, 392, 471);
 		leftPanelMain.setBackground(Color.WHITE);
 		getContentPane().add(leftPanelMain);
+        
 		// Dan playing around with random logo selection
 		RandomNumber logoPicker = new RandomNumber(3); // how many logos are in the classes folder?
 		int logoPicked = logoPicker.getNewNum();
@@ -119,19 +121,22 @@ public class HomeScreenGUI extends JFrame {
 		rightPanelMain.add(btnGenerateMeal);
 		btnGenerateMeal.addActionListener(event -> {
 			try {
-				new GeneratePlanScreen(mealDatabase, this);
+				//Original button function
+				//new GeneratePlanScreen(mealDatabase, this);
 
-				// Building new GUI
-//				leftPanelMain.setVisible(false);
-//				rightPanelMain.setVisible(false);
+				// Rebuild Panel
 //				leftPanelMain.removeAll();
-//				rightPanelMain.removeAll();
-//				rightPanelMain.add(new RightPanelLogo());
+				rightPanelMain.removeAll();
 //				leftPanelMain.add(new GeneratePlanGUI());
+				rightPanelMain.add(new RightPanelLogo());
+//				leftPanelMain.validate();
+				rightPanelMain.validate();
+//				leftPanelMain.repaint();
+				rightPanelMain.repaint();
+							
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Error in Generate Plan button!");
 			}
-
 		});
 
 		/***************************************************************
@@ -158,11 +163,10 @@ public class HomeScreenGUI extends JFrame {
 		btnEnterMeal.addActionListener(event -> {
 			try {
 				new EnterMealScreen(mealDatabase, this);
-//				rightPanel.setVisible(false);
+            // rightPanel.setVisible(false);
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Error in Enter Meal button!");
 			}
-
 		});
 
 		/***************************************************************
@@ -260,5 +264,20 @@ public class HomeScreenGUI extends JFrame {
 			lblLunches.setText("Lunches: " + mealDatabase.getDatabaseCount()[1]);
 			lblDinners.setText("Dinners: " + mealDatabase.getDatabaseCount()[2]);
 		}).start();
+	}
+	
+//	public void rebuildPanel(JPanel newLeft, JPanel newRight) {
+//		leftPanelMain.removeAll();
+//		rightPanelMain.removeAll();
+//		leftPanelMain.add(newLeft);
+//		rightPanelMain.add(newRight);
+//		leftPanelMain.validate();
+//		rightPanelMain.validate();
+//		leftPanelMain.repaint();
+//		rightPanelMain.repaint();
+//	}
+	
+	public void buildMainMenu() {
+		
 	}
 }

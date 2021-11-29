@@ -38,7 +38,7 @@ public class GeneratePlanGUI extends JPanel {
 	 */
 	public void initGUI() {
 		/***************************************************************
-		 * Left Panel - Generate Meal Plane
+		 * Left Panel - Generate Meal Plan
 		 ****************************************************************/
 		setBackground(Color.WHITE);
 		setBounds(0, 0, 392, 471);
@@ -59,7 +59,7 @@ public class GeneratePlanGUI extends JPanel {
 				"Day To Start", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		dropdownDaySelector.setFont(new Font("Arial", Font.PLAIN, 12));
 		dropdownDaySelector.setEditable(false);
-		dropdownDaySelector.setBounds(10, 67, 220, 42);
+		dropdownDaySelector.setBounds(86, 67, 220, 50);
 		dropdownDaySelector.setSelectedIndex(0);
 		this.add(dropdownDaySelector);
 
@@ -68,7 +68,7 @@ public class GeneratePlanGUI extends JPanel {
 		 ****************************************************************/
 		JSlider sliderMealsToGenerate = new JSlider(JSlider.HORIZONTAL, 1, 5, 3);
 		sliderMealsToGenerate.setFont(new Font("Arial", Font.PLAIN, 12));
-		sliderMealsToGenerate.setBounds(10, 199, 306, 68);
+		sliderMealsToGenerate.setBounds(43, 207, 306, 68);
 		sliderMealsToGenerate.setMajorTickSpacing(1);
 		sliderMealsToGenerate.setMinorTickSpacing(1);
 		sliderMealsToGenerate.setPaintTicks(true);
@@ -85,7 +85,7 @@ public class GeneratePlanGUI extends JPanel {
 		sliderDaysToGenerate.setFont(new Font("Arial", Font.PLAIN, 12));
 		sliderDaysToGenerate.setBorder(BorderFactory.createTitledBorder("Days to Generate"));
 		sliderDaysToGenerate.setBackground(Color.WHITE);
-		sliderDaysToGenerate.setBounds(10, 120, 306, 68);
+		sliderDaysToGenerate.setBounds(43, 128, 306, 68);
 		this.add(sliderDaysToGenerate);
 
 		/***************************************************************
@@ -94,19 +94,19 @@ public class GeneratePlanGUI extends JPanel {
 		JCheckBox chckbxBreakfast = new JCheckBox("Breakfast");
 		chckbxBreakfast.setSelected(true);
 		chckbxBreakfast.setBackground(Color.WHITE);
-		chckbxBreakfast.setBounds(10, 37, 89, 23);
+		chckbxBreakfast.setBounds(86, 37, 82, 23);
 		this.add(chckbxBreakfast);
 
 		JCheckBox chckbxLunch = new JCheckBox("Lunch");
 		chckbxLunch.setSelected(true);
 		chckbxLunch.setBackground(Color.WHITE);
-		chckbxLunch.setBounds(105, 37, 89, 23);
+		chckbxLunch.setBounds(170, 37, 77, 23);
 		this.add(chckbxLunch);
 
 		JCheckBox chckbxDinner = new JCheckBox("Dinner");
 		chckbxDinner.setSelected(true);
 		chckbxDinner.setBackground(Color.WHITE);
-		chckbxDinner.setBounds(200, 37, 89, 23);
+		chckbxDinner.setBounds(249, 37, 77, 23);
 		this.add(chckbxDinner);
 
 		/***************************************************************
@@ -114,11 +114,11 @@ public class GeneratePlanGUI extends JPanel {
 		 ****************************************************************/
 		JButton btnGeneratePlan = new JButton("Generate Plan");
 		btnGeneratePlan.setBounds(new Rectangle(0, 0, 10, 20));
-		btnGeneratePlan.setBounds(10, 278, 220, 30);
+		btnGeneratePlan.setBounds(117, 286, 158, 30);
 		this.add(btnGeneratePlan);
 		btnGeneratePlan.addActionListener(event -> {
 			try {
-				
+				System.out.println("Generate Plan button pressed");
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Error in Generate Plan Execute button!");
 			}
@@ -129,7 +129,7 @@ public class GeneratePlanGUI extends JPanel {
 		 ****************************************************************/
 		JLabel txtTitle = new JLabel("Meal Generation Settings");
 		txtTitle.setFont(new Font("Arial", Font.PLAIN, 18));
-		txtTitle.setBounds(10, 8, 203, 25);
+		txtTitle.setBounds(95, 8, 203, 25);
 		this.add(txtTitle);
 	}
 }
